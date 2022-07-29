@@ -18,4 +18,8 @@ puts "Creating freebies..."
 # ***************************************************************
 # Create freebies Here
 
+10.times do
+    Freebie.create(item_name: Faker::Creature::Animal.unique.name, value: rand(10..100), company_id: Company.all.sample.id, dev_id: Dev.all.sample.id)
+end
+
 puts "Seeding done!"
